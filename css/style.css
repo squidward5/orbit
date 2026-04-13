@@ -1,0 +1,158 @@
+html, body {
+    background-image: url("/images/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    font-family: "Google Sans", sans-serif;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    gap: 5px;
+}
+
+h1 {
+    font-size: 5rem;
+    color: white;
+    text-shadow: 0 0 20px rgba(255,255,255,0.15);
+    margin: 0;
+}
+
+p {
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.navigation-bar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.4));
+    transform: translateX(-50%);
+    width: 25%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+    padding: 5px 10px;
+    z-index: 9999;
+    border-radius: 100px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-list li {
+    color: white;
+    cursor: pointer;
+    padding: 5px 5px;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.2s ease;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.tabs img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.15s ease;
+}
+
+.tabs img:hover {
+    transform: scale(1.15);
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.15s ease;
+}
+
+.navlogo:hover {
+    transform: scale(1.1);
+}
+
+#message {
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.15s ease;
+}
+
+#message:hover {
+    transform: scale(1.05);
+}
+
+#message:active {
+    transform: scale(0.95);
+}
+
+#info {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.4));
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap: 15px;
+    padding: 15px 40px;
+    border-radius: 50px;
+    color: white;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.battery {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    
+}
+
+#battery-text {
+    margin: 0;
+    line-height: 1;
+}
+
+#battery-icon {
+    height: 25px;
+    width: auto;
+    display: block; 
+}
+
+#info p {
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+}

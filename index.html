@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/nav/logo.svg">
+    <title>orbit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navigation-bar">
+        <ul class="nav-list">
+            <li class="logo">
+                <a href="/index.html"><img src="/icons/nav/logo.svg" class="navlogo"></a>
+            </li>
+
+            <li class="tabs">
+                <a href="/g.html"><img src="/icons/nav/g.svg"></a>
+                <a href="/a.html"><img src="/icons/nav/a.svg"></a>
+                <a href="/s.html"><img src="/icons/nav/s.svg"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>orbit</h1>
+        
+        <p id="message"></p>
+    </div>
+
+    <div id="info">
+        <div class="battery">
+            <img src="icons/nav/battery.svg" id="battery-icon" alt="battery icon">
+            <p id="battery-text"></p>
+        </div>
+        <p>•</p>
+        <p id="time"></p>
+        <p>•</p>
+        <p id="date"></p>
+    </div>
+</body>
+
+<script src="js/particles.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/infoupdater.js"></script>
+</html>
