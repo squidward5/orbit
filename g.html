@@ -33,6 +33,7 @@
 
     <div class="main">
         <h1>games</h1>
+        <p>loaded (how many games there are) games!</p>
         <br>
         <input type="text" id="searchbar" class="search-bar" placeholder="search for something...">
         <br>
@@ -449,19 +450,17 @@
 <script src="js/infoupdater.js"></script>
 <script>
     const searchbar = document.getElementById('searchbar');
-    
+
     searchbar.addEventListener('input', function () {
         const query = this.value.toLowerCase();
         const games = document.querySelectorAll('.g-container');
-        
+
         games.forEach(game => {
             const title = game.querySelector('.g-text').textContent.toLowerCase();
-            
+
             if (title.includes(query)) {
-                // This removes the "display: none" and lets the CSS take over
-                game.style.display = ''; 
+                game.style.display = '';
             } else {
-                // This removes the item from the layout entirely
                 game.style.display = 'none';
             }
         });
@@ -469,6 +468,10 @@
     function navigateInternal(url) {
         window.location.href = url;
     }
+
+    const gameCount = document.querySelectorAll('.g-container').length;
+    document.getElementById('game-count').textContent =
+        `loaded ${gameCount} games!`;
 </script>
 
 </html>

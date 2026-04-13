@@ -21,7 +21,9 @@ const messages = [
     "this is a message",
     "y'know why i picked orbit? because it's a cool name",
     "i'm not very good at coming up with these messages",
-    "me and da boiz when we see someone using orbit: ",
+    "if you have any suggestions for messages, please let me know",
+    "larp larp larp sahur",
+    "maxim genuinely boutta get slimed out",
 ];
 
 let lastmsg = -1;
