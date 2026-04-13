@@ -12,8 +12,16 @@ canvas.style.pointerEvents = "none";
 canvas.style.zIndex = "0";
 
 function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
 }
 
 resize();
@@ -29,10 +37,10 @@ class particles {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
 
-        this.size = 2 + Math.random() * 3;
+        this.size = 0.5 + Math.random() * 1.5; // size
 
-        this.speedX = 0.2 + Math.random() * 0.6;
-        this.speedY = 0.2 + Math.random() * 0.6;
+        this.speedX = 0.2 + Math.random() * 0.6; // horizontal speed
+        this.speedY = 0.2 + Math.random() * 0.6; // vertical speed
     }
 
     update() {
@@ -44,8 +52,16 @@ class particles {
 
     draw() {
         ctx.beginPath();
-        ctx.fillStyle = "rgba(255,255,255,1)";
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        const gradient = ctx.createRadialGradient(
+            this.x, this.y, 0,
+            this.x, this.y, this.size * 2
+        );
+
+        gradient.addColorStop(0, "rgba(255,255,255,1)");
+        gradient.addColorStop(1, "rgba(255,255,255,0)");
+
+        ctx.fillStyle = gradient;
+        ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
         ctx.fill();
     }
 }

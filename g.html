@@ -20,13 +20,13 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <a href="index.html"><img src="icons/nav/logo.svg" class="navlogo"></a>
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="window.location.href = 'index.html';">
             </li>
 
             <li class="tabs">
-                <a href="g.html"><img src="icons/nav/g.svg"></a>
-                <a href="a.html"><img src="icons/nav/a.svg"></a>
-                <a href="s.html"><img src="icons/nav/s.svg"></a>
+                <img src="icons/nav/g.svg" onclick="window.location.href = 'g.html';">
+                <img src="icons/nav/a.svg" onclick="window.location.href = 'a.html';">
+                <img src="icons/nav/s.svg" onclick="window.location.href = 's.html';">
             </li>
         </ul>
     </div>
@@ -453,16 +453,19 @@
     searchbar.addEventListener('input', function () {
         const query = this.value.toLowerCase();
         const games = document.querySelectorAll('.g-container');
+        
         games.forEach(game => {
             const title = game.querySelector('.g-text').textContent.toLowerCase();
+            
             if (title.includes(query)) {
-                game.style.display = 'block';
+                // This removes the "display: none" and lets the CSS take over
+                game.style.display = ''; 
             } else {
+                // This removes the item from the layout entirely
                 game.style.display = 'none';
             }
         });
     });
-
     function navigateInternal(url) {
         window.location.href = url;
     }

@@ -4,7 +4,7 @@ const messages = [
     "genuinely just happy to be here",
     "what did you just do",
     "some of the frogie's arcade messages GOTTA GO bro 😭🙏",
-    "hello world",
+    "console.log('hello world')",
     "maxim a hater on god",
     "low life for life cuz im heartless",
     "black leather glove, no sequins",
@@ -19,8 +19,9 @@ const messages = [
     "this site might go mainstream one day, who knows",
     "i have no idea what to put here",
     "this is a message",
-    "yknow why i picked orbit? because it's a cool name",
-    "insp by many things, including but not limited to: space, planets, the solar system, the universe, and of course, orbits",
+    "y'know why i picked orbit? because it's a cool name",
+    "i'm not very good at coming up with these messages",
+    "me and da boiz when we see someone using orbit: ",
 ];
 
 let lastmsg = -1;

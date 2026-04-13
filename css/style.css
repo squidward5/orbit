@@ -4,7 +4,7 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -16,14 +16,16 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh;
     flex-direction: column;
     gap: 5px;
     z-index: 99999999;
+    text-align: center;
+    padding: 0 10px;
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     color: white;
     text-shadow: 0 0 20px rgba(255,255,255,0.15);
     margin: 0;
@@ -31,7 +33,7 @@ h1 {
 
 p {
     color: white;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 0;
 }
@@ -40,11 +42,13 @@ p {
     position: fixed;
     top: 10px;
     left: 50%;
+    transform: translateX(-50%);
     backdrop-filter: blur(10px);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.4));
-    transform: translateX(-50%);
-    width: 25%;
-    max-width: 1600px;
+    
+    width: 90%;
+    max-width: 900px;
+
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -85,7 +89,7 @@ p {
 }
 
 .tabs img {
-    width: 40px;
+    width: clamp(28px, 5vw, 40px);
     height: auto;
     transition: transform 0.15s ease;
 }
@@ -95,7 +99,7 @@ p {
 }
 
 .logo img {
-    width: 40px;
+    width: clamp(28px, 5vw, 40px);
     height: auto;
     transition: transform 0.15s ease;
 }
@@ -125,36 +129,85 @@ p {
     transform: translateX(-50%);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.4));
     backdrop-filter: blur(10px);
+    justify-content: center;
     display: flex;
+    align-items: center;
     gap: 15px;
-    padding: 15px 40px;
+    width: 90%;
+    max-width: 600px;
+    padding: 12px 25px;
     border-radius: 50px;
     color: white;
     z-index: 100;
-    display: flex;
-    align-items: center;
 }
 
 .battery {
     display: flex;
     align-items: center;
     gap: 6px;
-    
 }
 
 #battery-text {
     margin: 0;
     line-height: 1;
+    white-space: nowrap;
 }
 
 #battery-icon {
-    height: 25px;
+    height: clamp(18px, 4vw, 25px);
     width: auto;
-    display: block; 
+    display: block;
 }
 
 #info p {
     margin: 0;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
     white-space: nowrap;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+
+    .navigation-bar {
+        width: 95%;
+        padding: 5px 10px;
+    }
+
+    .nav-list {
+        gap: 5px;
+    }
+
+    .nav-list li {
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    .tabs {
+        gap: 5px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    #info {
+        gap: 8px;
+        padding: 10px 15px;
+    }
+}
+
+/* ===== TABLETS / SMALL LAPTOPS ===== */
+@media (max-width: 1000px) {
+
+    .navigation-bar {
+        width: 80%;
+    }
+
+    .nav-list li {
+        font-size: 16px;
+    }
 }

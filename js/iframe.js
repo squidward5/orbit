@@ -1,5 +1,3 @@
-// this code was taken from a previous project named nexus
-
 const iframe = document.getElementById("frame");
 const params = new URLSearchParams(window.location.search);
 const url = params.get("url");
