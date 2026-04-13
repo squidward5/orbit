@@ -16,6 +16,11 @@ const messages = [
     "site is still in development, expect bugs and missing features",
     "if you find any bugs, please report them to me",
     "i hope you enjoy the site!",
+    "this site might go mainstream one day, who knows",
+    "i have no idea what to put here",
+    "this is a message",
+    "yknow why i picked orbit? because it's a cool name",
+    "insp by many things, including but not limited to: space, planets, the solar system, the universe, and of course, orbits",
 ];
 
 let lastmsg = -1;
