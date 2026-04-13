@@ -24,6 +24,8 @@ const messages = [
     "if you have any suggestions for messages, please let me know",
     "larp larp larp sahur",
     "maxim genuinely boutta get slimed out",
+    "this ui is pretty good ngl",
+    "this is a message",
 ];
 
 let lastmsg = -1;

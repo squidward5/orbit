@@ -19,7 +19,7 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <img src="icons/nav/logo.svg" class="navlogo" onclick="window.location.href = 'index.html';">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="window.location.href = '/';">
             </li>
 
             <li class="tabs">
@@ -31,9 +31,13 @@
     </div>
 
     <div class="main">
-        <h1>orbit</h1>
-        <p id="message"></p>
-        <button id="server" onclick="window.open('https://discord.com/invite/jfXq9wxY5k')">join the discord</button>
+        <h1 id="title">United Education</h1>
+        <p id="message">Loading your math...</p>
+        <br>
+        <input type="text" id="searchbar2" class="search-bar" placeholder="search for something...">
+        <a href="https://discord.com/invite/jfXq9wxY5k" target="_blank">
+            <button id="server">Math Server</button>
+        </a>
     </div>
 
     <div id="info">
@@ -51,5 +55,6 @@
 <script src="js/particles.js"></script>
 <script src="js/messages.js" defer></script>
 <script src="js/infoupdater.js"></script>
-
+<script src="js/home.js" defer></script>
+<script src="js/search.js"></script>
 </html>

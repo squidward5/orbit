@@ -45,15 +45,13 @@ p {
     transform: translateX(-50%);
     backdrop-filter: blur(10px);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.4));
-    
     width: 90%;
     max-width: 900px;
-
     display: flex;
     justify-content: space-between;
     text-align: center;
     color: white;
-    padding: 5px 10px;
+    padding: 10px 15px;
     z-index: 9999;
     border-radius: 100px;
 }
@@ -68,20 +66,6 @@ p {
     justify-content: space-between;
 }
 
-.nav-list li {
-    color: white;
-    cursor: pointer;
-    padding: 5px 5px;
-    border-radius: 50px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: transform 0.2s ease;
-    font-size: 18px;
-    font-weight: 400;
-}
-
 .tabs {
     display: flex;
     gap: 10px;
@@ -92,6 +76,7 @@ p {
     width: clamp(28px, 5vw, 40px);
     height: auto;
     transition: transform 0.15s ease;
+    cursor: pointer;
 }
 
 .tabs img:hover {
@@ -102,6 +87,7 @@ p {
     width: clamp(28px, 5vw, 40px);
     height: auto;
     transition: transform 0.15s ease;
+    cursor: pointer;
 }
 
 .navlogo:hover {
@@ -210,4 +196,70 @@ p {
     .nav-list li {
         font-size: 16px;
     }
+}
+
+#server {
+    margin-top: 15px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0.08),rgba(0, 0, 0, 0.45));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#server:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0.12),rgba(0, 0, 0, 0.45));
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.12), inset 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+#server::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#server:hover::before {
+    opacity: 1;
+}
+
+.search-bar {
+    position: relative;
+    width: 300px;
+    max-width: 80%;
+    padding: 14px 20px;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    border: 2px solid #0a0a0a;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    backdrop-filter: blur(5px);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.search-bar:hover {
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 5px #000000;
+}
+
+.search-bar:focus {
+    transform: scale(1.15);
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid #ffffff;
 }
