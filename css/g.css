@@ -1,0 +1,123 @@
+
+html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.gbtn {
+    border-radius: 12px;
+    z-index: 2;
+    cursor: pointer;
+    display: block;
+    transition: all 0.2s ease;
+    height: auto;
+    transform-origin: center center;
+    will-change: transform;
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+}
+
+.gbtn:hover {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.g-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.g-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 175px;
+    height: 175px;
+}
+
+.g-container:hover {
+    transform: scale(1.05);
+}
+
+.g-container img.gbtn {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.g-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 6px 0;
+    border-radius: 0 0 12px 12px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    z-index: 1;
+}
+
+.g-container:hover .g-text {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.search-bar {
+    position: relk;
+    width: 300px;
+    max-width: 80%;
+    padding: 14px 20px;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    border: 3px solid #141414;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    backdrop-filter: blur(5px);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.search-bar:hover {
+    border: 3px solid #ff5e00;
+    box-shadow: 0 0 5px #000000;
+}
+
+.search-bar:focus {
+    transform: scale(1.15);
+    background-color: rgba(38, 38, 38, 0.6);
+    backdrop-filter: blur(10px);
+    border: 3px solid #ff5e00;
+}

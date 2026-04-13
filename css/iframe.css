@@ -1,0 +1,44 @@
+.controls {
+    width: 345px;
+    height: 64px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    top: -5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    backdrop-filter: blur(10px);
+    z-index: 4;
+}
+
+.controls img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.controls img:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+.controls img:active {
+    transform: scale(0.95);
+}
+
+iframe {
+    width: 100%;
+    max-width: 1000px;
+    background-color: black;
+    aspect-ratio: 16/9;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    z-index: 2;
+}
