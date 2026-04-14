@@ -250,6 +250,7 @@ p {
     backdrop-filter: blur(5px);
     transition: all 0.2s ease;
     text-align: center;
+    z-index: 999999999;
 }
 
 .search-bar:hover {
