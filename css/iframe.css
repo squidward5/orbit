@@ -39,7 +39,7 @@ iframe {
     width: min(100%, 1000px);
     aspect-ratio: 1.85 / 1;
     height: auto;
-    max-height: 80vh;
+    max-height: calc(100vh - 100px);
     margin: 0 auto;
     display: block;
     background-color: black;
