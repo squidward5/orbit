@@ -10,12 +10,33 @@ canvas.style.width = "100vw";
 canvas.style.height = "100vh";
 canvas.style.pointerEvents = "none";
 canvas.style.zIndex = "0";
+canvas.style.opacity = "1";
 
 let width, height;
-let particles2 = [];
-let oldWidth = window.innerWidth;
-let oldHeight = window.innerHeight;
+let particles = [];
 
+let particlesEnabled = true;
+let particleOpacity = 1;
+let targetOpacity = 1;
+let fullyHidden = !particlesEnabled;
+
+const defaultSettings = {
+    antiClose: false,
+    particles: true,
+    infodisplay: true,
+};
+
+const saved = JSON.parse(localStorage.getItem("settings")) || {};
+
+const settings = {
+    ...defaultSettings,
+    ...saved
+};
+
+particlesEnabled = settings.particles;
+targetOpacity = particlesEnabled ? 1 : 0;
+
+// resize
 function resize() {
     const dpr = window.devicePixelRatio || 1;
 
@@ -31,9 +52,10 @@ function resize() {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 
+// particles
 function createParticles() {
     const count = Math.floor((width * height) / 8000);
-    particles2 = Array.from({ length: count }, () => new Particle());
+    particles = Array.from({ length: count }, () => new Particle());
 }
 
 class Particle {
@@ -55,7 +77,6 @@ class Particle {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        // Wrap around screen
         if (this.x > width) this.x = 0;
         if (this.y > height) this.y = 0;
     }
@@ -66,7 +87,7 @@ class Particle {
             this.x, this.y, this.size * 2
         );
 
-        gradient.addColorStop(0, "rgba(255,255,255,1)");
+        gradient.addColorStop(0, `rgba(255,255,255,${particleOpacity})`);
         gradient.addColorStop(1, "rgba(255,255,255,0)");
 
         ctx.beginPath();
@@ -77,39 +98,54 @@ class Particle {
 }
 
 function handleResize() {
-    const prevW = oldWidth;
-    const prevH = oldHeight;
+    const prevW = width || window.innerWidth;
+    const prevH = height || window.innerHeight;
 
     resize();
 
     const scaleX = width / prevW;
     const scaleY = height / prevH;
 
-    for (let p of particles2) {
+    for (let p of particles) {
         p.x *= scaleX;
         p.y *= scaleY;
-        p.speedX *= scaleX;
-        p.speedY *= scaleY;
     }
 
-    oldWidth = width;
-    oldHeight = height;
+    createParticles();
 }
 
 window.addEventListener("resize", handleResize);
 
-setInterval(resize, 500);
-
 function animate() {
     ctx.clearRect(0, 0, width, height);
 
-    for (let p of particles2) {
-        p.update();
-        p.draw();
+    particleOpacity += (targetOpacity - particleOpacity) * 0.3;
+    canvas.style.opacity = particleOpacity;
+
+    if (particleOpacity < 0.1 && targetOpacity === 0 && !fullyHidden) {
+        fullyHidden = true;
+        canvas.style.display = "none";
+    }
+
+    if (targetOpacity === 1 && fullyHidden) {
+        fullyHidden = false;
+        canvas.style.display = "block";
+    }
+
+    if (!fullyHidden) {
+        for (let p of particles) {
+            p.update();
+            p.draw();
+        }
     }
 
     requestAnimationFrame(animate);
 }
+
+document.addEventListener("settingsChanged", (e) => {
+    particlesEnabled = e.detail.particles;
+    targetOpacity = particlesEnabled ? 1 : 0;
+});
 
 resize();
 createParticles();

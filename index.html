@@ -19,13 +19,13 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <img src="icons/nav/logo.svg" class="navlogo" onclick="window.location.href = '/';">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('/')">
             </li>
 
             <li class="tabs">
-                <img src="icons/nav/g.svg" onclick="window.location.href = 'g.html';">
-                <img src="icons/nav/a.svg" onclick="window.location.href = 'a.html';">
-                <img src="icons/nav/s.svg" onclick="window.location.href = 's.html';">
+                <img src="icons/nav/g.svg" onclick="navigateInternal('g.html')">
+                <img src="icons/nav/a.svg" onclick="navigateInternal('a.html')">
+                <img src="icons/nav/s.svg" onclick="navigateInternal('s.html')">
             </li>
         </ul>
     </div>
@@ -36,7 +36,10 @@
         <br>
         <input type="text" id="searchbar2" class="search-bar" placeholder="search for something...">
         <a href="https://discord.com/invite/jfXq9wxY5k" target="_blank">
-            <button id="server">Math Server</button>
+            <button id="btn">Math Server</button>
+        </a>
+        <a href="c.html">
+            <button id="btn">credits</button>
         </a>
     </div>
 
@@ -57,4 +60,11 @@
 <script src="js/infoupdater.js"></script>
 <script src="js/home.js" defer></script>
 <script src="js/search.js"></script>
+<script src="js/settings.js"></script>
+
+<script>
+    function navigateInternal(url) {
+        window.location.href = url;
+    }
+</script>
 </html>

@@ -16,18 +16,49 @@
 </head>
 
 <body>
+    <h1>still being developed. come back later!</h1>
+    <a href="index.html">
+        <img src="icons/nav/logo.svg">
+    </a>
+    <p>click the logo to go back</p>
     <iframe id="searchframe"></iframe>
 
 
-    <div class="controls">
-        <a href="index.html"><img src="icons/nav/logo.svg"></a>
+    <div class="controls" id="controls" style="display: none;">
+
+        <div class="topbar">
+            <div class="hide" id="toggleControls"></div>
+        </div>
+
+        <a href="index.html">
+            <img src="icons/nav/logo.svg">
+        </a>
+
         <input type="text" id="search" class="search" placeholder="search for something...">
+
         <a id="back"><img src="c-icons/previous.png"></a>
         <a id="forward"><img src="c-icons/next.png"></a>
         <a id="refresh"><img src="c-icons/refresh.svg"></a>
+
     </div>
 </body>
 
 <script src="js/iframe.js"></script>
 <script src="js/search.js"></script>
+
+<script>
+    function navigateInternal(url) {
+        window.location.href = url;
+    }
+
+    const controls = document.getElementById("controls");
+    const toggle = document.getElementById("toggleControls");
+
+    let hidden = false;
+
+    toggle.addEventListener("click", () => {
+        hidden = !hidden;
+        controls.classList.toggle("hidden", hidden);
+    });
+</script>
 </html>

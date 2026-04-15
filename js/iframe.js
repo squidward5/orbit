@@ -11,7 +11,9 @@ if (lastGame) {
     iframe.src = lastGame;
 }
 
-history.replaceState({}, document.title, "/iframe.html");
+if (window.location.pathname.endsWith("iframe.html")) {
+    history.replaceState({}, document.title, "/iframe.html");
+}
 
 document.getElementById("r").addEventListener("click", () => {
     iframe.src = iframe.src;

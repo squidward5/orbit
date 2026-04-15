@@ -20,19 +20,48 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <img src="icons/nav/logo.svg" class="navlogo" onclick="window.location.href = '/';">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('/')">
             </li>
 
             <li class="tabs">
-                <img src="icons/nav/g.svg" onclick="window.location.href = 'g.html';">
-                <img src="icons/nav/a.svg" onclick="window.location.href = 'a.html';">
-                <img src="icons/nav/s.svg" onclick="window.location.href = 's.html';">
+                <img src="icons/nav/g.svg" onclick="navigateInternal('g.html')">
+                <img src="icons/nav/a.svg" onclick="navigateInternal('a.html')">
+                <img src="icons/nav/s.svg" onclick="navigateInternal('s.html')">
             </li>
         </ul>
     </div>
 
     <div class="main">
-        <h1>this will be implemented later.</h1>
+        <h1>settings</h1>
+
+        <div class="settings-grid">
+            <div class="card">
+                <h3>anti-close</h3>
+                <p>prevents this tab from being accidentally closed.</p>
+                <div class="btn-row">
+                    <button data-setting="antiClose" data-value="true">enable</button>
+                    <button data-setting="antiClose" data-value="false">disable</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>particles</h3>
+                <p>the little white dots that float on this page.</p>
+                <div class="btn-row">
+                    <button data-setting="particles" data-value="true">enable</button>
+                    <button data-setting="particles" data-value="false">disable</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>info display</h3>
+                <p>the info display on the bottom of the page</p>
+                <div class="btn-row">
+                    <button data-setting="infodisplay" data-value="true">enable</button>
+                    <button data-setting="infodisplay" data-value="false">disable</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="info">
@@ -50,6 +79,11 @@
 <script src="js/particles.js"></script>
 <script src="js/messages.js"></script>
 <script src="js/infoupdater.js"></script>
-<script src="js/iframe.js"></script>
+<script src="js/settings.js"></script>
 
+<script>
+    function navigateInternal(url) {
+        window.location.href = url;
+    }
+</script>
 </html>

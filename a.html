@@ -20,19 +20,20 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <img src="icons/nav/logo.svg" class="navlogo" onclick="window.location.href = '/';">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('/')">
             </li>
 
             <li class="tabs">
-                <img src="icons/nav/g.svg" onclick="window.location.href = 'g.html';">
-                <img src="icons/nav/a.svg" onclick="window.location.href = 'a.html';">
-                <img src="icons/nav/s.svg" onclick="window.location.href = 's.html';">
+                <img src="icons/nav/g.svg" onclick="navigateInternal('g.html')">
+                <img src="icons/nav/a.svg" onclick="navigateInternal('a.html')">
+                <img src="icons/nav/s.svg" onclick="navigateInternal('s.html')">
             </li>
         </ul>
     </div>
 
     <div class="main">
-        <h1>this will be implemented later.</h1>
+        <h1>this page is currently in development.</h1>
+        <p>check back later for updates!</p>
     </div>
 
     <div id="info">
@@ -50,6 +51,12 @@
 <script src="js/particles.js"></script>
 <script src="js/messages.js"></script>
 <script src="js/infoupdater.js"></script>
-<script src="js/iframe.js"></script>
+<script src="js/settings.js"></script>
 
+<script>
+    function navigateInternal(url) {
+        isInternalNavigation = true;
+        window.location.href = url;
+    }
+</script>
 </html>

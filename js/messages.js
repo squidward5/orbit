@@ -8,25 +8,25 @@ const messages = [
     { text: "maxim a hater on god" },
     { text: "low life for life cuz im heartless" },
     { text: "black leather glove, no sequins" },
-    { text: "coding is fun! - me, probably" },
     { text: "i am a genius" },
     { text: "yes king" },
     { text: "twin 🥹" },
     { text: "thank you thank you thank you" },
     { text: "this site might go mainstream one day, who knows" },
-    { text: "this is a message" },
     { text: "y'know why i picked orbit? because it's a cool name" },
     { text: "if you have any suggestions for messages, please let me know" },
     { text: "larp larp larp sahur" },
     { text: "maxim genuinely boutta get slimed out" },
     { text: "this ui is pretty good ngl" },
-    { text: "this is a message" },
+    { text: "duuuuude noahhh"},
     { text: "so i've heard that if you say the word \"epstein\" you will GENUINELY get iss 💔🙏" },
     { text: "if you click the message, it will change to a new one! try it out!" },
     { text: "love yall <3" },
     { text: "genuinely what do i put here" },
     { text: "goguardian got NOTHING on this site" },
-    { text: "contentkeeper is a joke" },
+    { text: "contentkeeper is genuinely one of the worst filters ever created" },
+    { text: "hey man!" },
+    { text: "i miss you juice wrld i miss you xxxtentacion... you made the world so bright" },
     { 
         text: "hey buddy!!", 
         gif: "gifs/happycat.gif" 
@@ -36,11 +36,11 @@ const messages = [
         gif: "gifs/charlie kirk.png"
     },
     {
-        text: "when you genuinely just vibing",
+        text: "when you genuinely passed the test and you didn't even study",
         gif: "gifs/vibingcat.gif"
     },
     {
-        text: "when you see the new messages",
+        text: "pov: you see the new messages",
         gif: "gifs/pufferfishcat.gif"
     }
 
@@ -62,7 +62,7 @@ function getRandomMessage() {
 }
 
 function renderGifs(msg) {
-    text.innerHTML = `<div class="msg-text">${msg.text}</div>${msg.gif ? `<img src="${msg.gif}" class="msg-gif">` : ""}`;
+    text.innerHTML = `<div class="msg-text">${msg.text}</div>${msg.gif ? `<img src="${msg.gif}" class="msg-gif" style="z-index: 5;">` : ""}`;
 }
 
 renderGifs(getRandomMessage());
