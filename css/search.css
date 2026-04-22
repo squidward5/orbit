@@ -1,4 +1,10 @@
-body { background-color: rgb(104, 104, 104); }
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
 * {
     font-family: "Google Sans", sans-serif;
@@ -31,69 +37,85 @@ body { background-color: rgb(104, 104, 104); }
 }
 
 .search:focus {
-    width: 360px;
+    width: 330px;
     transform: scale(1.05);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08),rgba(0, 0, 0, 0.25));
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.12), inset 0 0 12px rgba(255, 255, 255, 0.08);
 }
+
 .controls {
     position: fixed;
-    bottom: 0;
+    bottom: 10px; 
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.4));
-    backdrop-filter: blur(10px);
-    justify-content: center;
-    transition: all 0.35s ease;
     display: flex;
+    flex-direction: column; 
     align-items: center;
-    gap: 20px;
-    width: 90%;
-    max-width: 600px;
-    padding: 10px 15px;
+    gap: 8px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: auto;
+    min-width: 500px;
+    max-width: 95%;
+    padding: 10px 15px 10px 15px;
     border-radius: 50px;
-    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     z-index: 100;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.controls-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
 
 .topbar {
+    position: absolute;
+    top: -15px;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 6px 0;
+    pointer-events: none;
 }
 
 .hide {
-    width: 70px;
+    width: 60px;
     height: 6px;
-    background: rgba(255, 255, 255, 0.35);
-    border-radius: 999px;
+    background: rgba(131, 131, 131, 0.7);
+    border-radius: 1000px;
     cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.2s ease;
+    cursor: url(../images/cursors/pointer.png), pointer;
 }
-
 
 .controls.hidden {
-    transform: translateX(-50%) translateY(80%);
+    transform: translateX(-50%) translateY(calc(100% + 10px));
 }
 
-
 .hide:hover {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(131, 131, 131, 0.3);
+    transform: scaleY(1.2);
 }
 
 .controls img {
     width: 50px;
     height: auto;
     display: block;
+    user-select: none;
 }
 
 #searchframe {
     width: 100%;
     height: 100%;
     border: none;
-    margin: 0;
 }
 
 a {
@@ -103,4 +125,22 @@ a {
 a:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+.custom-cursor .hide,
+.custom-cursor:hover,
+.custom-cursor:active {
+    cursor: url("../images/cursors/cursor.png"), default;
+}
+
+.custom-cursor {
+    cursor: url("../images/cursors/cursor.png"), default;
+}
+
+.custom-cursor a:hover {
+    cursor: url("../images/cursors/pointer.png"), pointer;
+}
+
+.custom-cursor .search {
+    cursor: url("../images/cursors/cursor.png"), text;
 }

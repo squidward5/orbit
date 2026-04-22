@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/nav/logo.svg">
+    <title>orbit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iframe.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="navigation-bar">
+        <ul class="nav-list">
+            <li class="logo">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('index.htM')">
+            </li>
+
+            <li class="tabs">
+                <img src="icons/nav/g.svg" onclick="navigateInternal('g.htM')">
+                <img src="icons/nav/a.svg" onclick="navigateInternal('a.htM')">
+                <img src="icons/nav/s.svg" onclick="navigateInternal('s.htM')">
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <br><br><br><br><br><br>
+        <h1>privacy policy</h1>
+        <p>last updated: 4/16/2026</p>
+
+        <br>
+
+        <h2>1. Information We Collect</h2>
+        <p>
+            We do not collect, store, or request any personal information from users. You are not required to create an account or provide any personal details to use this website.
+        </p>
+
+        <h2>2. Usage Data</h2>
+        <p>
+            We may collect basic, non-personal information such as browser type, device type, and general usage data. This information is anonymous and cannot be used to identify you.
+        </p>
+
+        <h2>3. How We Use Information</h2>
+        <p>
+            Any non-personal data collected is used only to improve website performance, functionality, and user experience.
+        </p>
+
+        <h2>4. Data Sharing</h2>
+        <p>
+            We do not sell, trade, or share any user data with third parties.
+        </p>
+
+        <h2>5. Third-Party Links</h2>
+        <p>
+            This website may contain links to external sites (such as truffled.lol or frogiesarcade.win inspirations). We are not responsible for the privacy practices or content of those websites.
+        </p>
+
+        <h2>6. Security</h2>
+        <p>
+            While we do not collect personal data, we still take reasonable steps to keep the website safe and secure.
+        </p>
+
+        <h2>7. Changes to This Policy</h2>
+        <p>
+            We may update this privacy policy at any time. Changes will be posted on this page with an updated date.
+        </p>
+
+        <h2>8. Contact</h2>
+        <p>
+            If you have any questions about this privacy policy, you may contact us through our <a href="https://discord.com/invite/jfXq9wxY5k" target="_blank" style="color: blue; cursor: pointer; display: inline-block;">Discord</a>.</p>
+        <br><br><br><br>
+    </div>
+
+    <div id="info">
+        <div class="battery">
+            <img src="icons/nav/battery.svg" id="battery-icon" alt="battery icon">
+            <p id="battery-text"></p>
+        </div>
+        <p>•</p>
+        <p id="time"></p>
+        <p>•</p>
+        <p id="date"></p>
+    </div>
+</body>
+
+<script src="js/particles.js"></script>
+<script src="js/infoupdater.js"></script>
+<script src="js/settings.js"></script>
+
+<script>
+    function navigateInternal(url) {
+        window.__setAllowExit?.(true);
+        window.location.href = url;
+    }
+</script>
+</html>

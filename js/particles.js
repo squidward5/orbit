@@ -36,7 +36,6 @@ const settings = {
 particlesEnabled = settings.particles;
 targetOpacity = particlesEnabled ? 1 : 0;
 
-// resize
 function resize() {
     const dpr = window.devicePixelRatio || 1;
 
@@ -52,7 +51,6 @@ function resize() {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 
-// particles
 function createParticles() {
     const count = Math.floor((width * height) / 8000);
     particles = Array.from({ length: count }, () => new Particle());

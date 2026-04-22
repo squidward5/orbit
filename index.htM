@@ -19,13 +19,13 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('/')">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('index.htM')">
             </li>
 
             <li class="tabs">
-                <img src="icons/nav/g.svg" onclick="navigateInternal('g.html')">
-                <img src="icons/nav/a.svg" onclick="navigateInternal('a.html')">
-                <img src="icons/nav/s.svg" onclick="navigateInternal('s.html')">
+                <img src="icons/nav/g.svg" onclick="navigateInternal('g.htM')">
+                <img src="icons/nav/a.svg" onclick="navigateInternal('a.htM')">
+                <img src="icons/nav/s.svg" onclick="navigateInternal('s.htM')">
             </li>
         </ul>
     </div>
@@ -35,11 +35,14 @@
         <p id="message">Loading your math...</p>
         <br>
         <input type="text" id="searchbar2" class="search-bar" placeholder="search for something...">
-        <a href="https://discord.com/invite/jfXq9wxY5k" target="_blank">
-            <button id="btn">Math Server</button>
+        <a>
+            <button id="btn" onclick="window.open('https://discord.com/invite/jfXq9wxY5k')">Math Server</button>
         </a>
-        <a href="c.html">
-            <button id="btn">credits</button>
+        <a>
+            <button id="btn" onclick="navigateInternal('p.htM')">privacy policy</button>
+        </a>
+        <a>
+            <button id="btn" onclick="navigateInternal('c.htM')">credits</button>
         </a>
     </div>
 
@@ -64,6 +67,7 @@
 
 <script>
     function navigateInternal(url) {
+        window.__setAllowExit?.(true);
         window.location.href = url;
     }
 </script>

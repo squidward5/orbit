@@ -15,39 +15,33 @@
 
 </head>
 
-<body>
-    <h1>still being developed. come back later!</h1>
-    <a href="index.html">
-        <img src="icons/nav/logo.svg">
-    </a>
-    <p>click the logo to go back</p>
-    <iframe id="searchframe"></iframe>
-
-
-    <div class="controls" id="controls" style="display: none;">
-
+<body style="background-repeat: no-repeat;">
+    <div class="controls" id="controls">
         <div class="topbar">
             <div class="hide" id="toggleControls"></div>
         </div>
 
-        <a href="index.html">
-            <img src="icons/nav/logo.svg">
-        </a>
+        <div class="controls-inner">
+            <a>
+                <img src="icons/nav/logo.svg" onclick="navigateInternal('index.htM')">
+            </a>
 
-        <input type="text" id="search" class="search" placeholder="search for something...">
+            <input type="text" id="search" class="search" placeholder="search for something...">
 
-        <a id="back"><img src="c-icons/previous.png"></a>
-        <a id="forward"><img src="c-icons/next.png"></a>
-        <a id="refresh"><img src="c-icons/refresh.svg"></a>
-
+            <a id="back"><img src="c-icons/previous.png"></a>
+            <a id="forward"><img src="c-icons/next.png"></a>
+            <a id="refresh"><img src="c-icons/refresh.svg"></a>
+        </div>
     </div>
+    <iframe id="searchframe"></iframe>
 </body>
 
 <script src="js/iframe.js"></script>
 <script src="js/search.js"></script>
-
+<script src="js/settings.js"></script>
 <script>
     function navigateInternal(url) {
+        window.__setAllowExit?.(true);
         window.location.href = url;
     }
 
@@ -61,4 +55,5 @@
         controls.classList.toggle("hidden", hidden);
     });
 </script>
+
 </html>

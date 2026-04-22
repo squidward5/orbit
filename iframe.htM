@@ -20,20 +20,29 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('/')">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('index.htM')">
             </li>
 
             <li class="tabs">
-                <img src="icons/nav/g.svg" onclick="navigateInternal('g.html')">
-                <img src="icons/nav/a.svg" onclick="navigateInternal('a.html')">
-                <img src="icons/nav/s.svg" onclick="navigateInternal('s.html')">
+                <img src="icons/nav/g.svg" onclick="navigateInternal('g.htM')">
+                <img src="icons/nav/a.svg" onclick="navigateInternal('a.htM')">
+                <img src="icons/nav/s.svg" onclick="navigateInternal('s.htM')">
             </li>
         </ul>
     </div>
 
     <div class="main">
-        <h1>this page is currently in development.</h1>
-        <p>check back later for updates!</p>
+        <div class="iframe-container">
+            <img id="noiseoverlay" src="images/noise.png">
+            <iframe id="frame" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <img src="c-icons/fullscreen.svg" alt="fullscreen" id="f">
+            <img src="c-icons/refresh.svg" alt="reload" id="r">
+            <img src="c-icons/openinwindow.svg" alt="aboutblank" id="b">
+            <img src="c-icons/download.svg" alt="download" id="d">
+            <img src="c-icons/link.svg" alt="link" id="l">
+        </div>
     </div>
 
     <div id="info">
@@ -49,13 +58,14 @@
 </body>
 
 <script src="js/particles.js"></script>
-<script src="js/messages.js"></script>
 <script src="js/infoupdater.js"></script>
+<script src="js/iframe.js"></script>
+<script src="js/search.js"></script>
 <script src="js/settings.js"></script>
 
 <script>
     function navigateInternal(url) {
-        isInternalNavigation = true;
+        window.__setAllowExit?.(true);
         window.location.href = url;
     }
 </script>

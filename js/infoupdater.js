@@ -38,6 +38,18 @@ function updateBattery() {
                     document.getElementById('battery-text').textContent += " (Not Charging)";
                     document.getElementById('battery-icon').src = "icons/nav/battery_notcharging.svg";
                 }
+
+                if (level < 21) {
+                    document.getElementById('battery-text').style.color = "#FF8C00";
+                }
+
+                if (level < 11) {
+                    document.getElementById('battery-text').style.color = "#CC0000";
+                }
+
+                if (isCharging) {
+                    document.getElementById('battery-text').style.color = "white";
+                }
             };
 
             updateAllBatteryInfo();

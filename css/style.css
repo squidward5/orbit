@@ -1,12 +1,20 @@
+:root {
+    --bg-image: url("images/bg.png");
+}
+
 html,
 body {
-    background-image: url("../images/bg.png");
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: var(--bg-image);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 100vh;
-    margin: 0;
+    
 }
 
 * {
@@ -27,6 +35,13 @@ body {
 
 h1 {
     font-size: clamp(2.5rem, 8vw, 5rem);
+    color: white;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    margin: 0;
+}
+
+h2 {
+    font-size: clamp(2rem, 1vw, 7rem);
     color: white;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
     margin: 0;
@@ -152,7 +167,6 @@ p {
     white-space: nowrap;
 }
 
-/* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
     .navigation-bar {
@@ -208,11 +222,13 @@ p {
     font-weight: 500;
     cursor: pointer;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.45));
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05), inset 0 0 10px rgba(255, 255, 255, 0.05);
     transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
+    z-index: 999;
 }
 
 #btn:hover {
@@ -250,6 +266,7 @@ p {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.04);
     outline: none;
     transition: all 0.2s ease;
+    z-index: 999;
 }
 
 .search-bar:hover {
@@ -266,10 +283,12 @@ p {
 }
 
 .msg-gif {
-    max-width: 200px;
-    margin-top: 8px;
+    max-width: 125px;
+    max-height: 85px;
+    margin-top: 15px;
     border-radius: 10px;
 }
+
 
 .settings-grid {
     display: grid;
@@ -376,4 +395,99 @@ canvas {
 
 #info {
     transition: opacity 0.2s ease;
+}
+
+.bg-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+    width: 250px;
+    height: 50px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.bg-container:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    border: 2px solid #ffffff;
+    z-index: 10;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.bg-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    font-size: 8px;
+    font-weight: 800;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.bg-container:hover .bg-text {
+    opacity: 1;
+}
+
+.custom-cursor {
+    cursor: url("../images/cursors/cursor.png"), default;
+}
+
+.custom-cursor button,
+
+.custom-cursor .tabs img,
+.custom-cursor #btn,
+.custom-cursor img,
+.custom-cursor #message,
+.custom-cursor .logo img
+.custom-cursor .navlogo:hover
+.custom-cursor .bg-container {
+    cursor: url("../images/cursors/pointer.png"), pointer;
+}
+
+.custom-cursor .search-bar,
+.custom-cursor input,
+.custom-cursor textarea {
+    cursor: url("../images/cursors/type.png"), text;
+}
+
+#cloakSelect {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#cloakSelect:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+#cloakSelect.full {
+    width: 100%;
+}
+
+#cloakSelect option {
+    background: #1e1e1e;
+    color: white;
 }

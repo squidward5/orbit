@@ -19,6 +19,7 @@ html, body {
     transform-origin: center center;
     will-change: transform;
     width: 225px;
+    background-color: black;
     height: 225px;
     object-fit: cover;
 }
@@ -44,7 +45,7 @@ html, body {
 }
 
 .g-container:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 2px solid #ffffff;
     z-index: 10; 
@@ -74,11 +75,17 @@ html, body {
     border-radius: 12px;
     opacity: 0;
     transition: all 0.2s ease;
-
     pointer-events: none;
     z-index: 2;
 }
 
+.g-container:hover .g-text {
+    opacity: 1;
+}
+
+.hide-overlay .g-container:hover .g-text {
+    opacity: 0;
+}
 .main {
     position: relative;
     display: flex;
@@ -126,4 +133,21 @@ html, body {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08),rgba(0, 0, 0, 0.25));
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.12), inset 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.custom-cursor {
+    cursor: url("../images/cursors/cursor.png"), default;
+}
+
+.custom-cursor * {
+    cursor: inherit;
+}
+
+.custom-cursor .gbtn,
+.custom-cursor .g-container {
+    cursor: url("../images/cursors/pointer.png"), pointer;
+}
+
+.custom-cursor .search-bar {
+    cursor: url("../images/cursors/type.png"), text;
 }

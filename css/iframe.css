@@ -36,9 +36,8 @@
 
 iframe {
     width: min(90vw, 900px);
-    height: auto;
-    aspect-ratio: 1.85 / 1;
     max-height: 60vh;
+    aspect-ratio: 1.85 / 1;
     display: block;
     border: none;
     z-index: 3;
@@ -57,4 +56,23 @@ iframe {
     overflow: hidden;
     border-radius: 12px;
     margin: 0;
+}
+
+.custom-cursor .controls img {
+    cursor: url(../images/cursors/pointer.png), pointer;
+}
+
+#noiseoverlay {
+    position: absolute;
+    width: min(90vw, 900px);
+    max-height: 60vh;
+    aspect-ratio: 1.85 / 1;
+    background-repeat: repeat;
+    pointer-events: none;
+    border-radius: 12px;
+    z-index: 4;
+}
+
+.iframe-container {
+    position: relative;
 }

@@ -20,20 +20,21 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('/')">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('index.htM')">
             </li>
 
             <li class="tabs">
-                <img src="icons/nav/g.svg" onclick="navigateInternal('g.html')">
-                <img src="icons/nav/a.svg" onclick="navigateInternal('a.html')">
-                <img src="icons/nav/s.svg" onclick="navigateInternal('s.html')">
+                <img src="icons/nav/g.svg" onclick="navigateInternal('g.htM')">
+                <img src="icons/nav/a.svg" onclick="navigateInternal('a.htM')">
+                <img src="icons/nav/s.svg" onclick="navigateInternal('s.htM')">
             </li>
         </ul>
     </div>
 
     <div class="main">
         <h1>credits</h1>
-        <p>gn-math - a group of web porters that ported all of these games here</p>
+        <p>zay - made the entire site</p>
+        <p>gn-math - games</p>
         <p>truffled.lol / frogiesarcade.win - inspiration, while still having my own hint to them</p>
         
     </div>
@@ -51,13 +52,12 @@
 </body>
 
 <script src="js/particles.js"></script>
-<script src="js/messages.js"></script>
 <script src="js/infoupdater.js"></script>
 <script src="js/settings.js"></script>
 
 <script>
     function navigateInternal(url) {
-        isInternalNavigation = true;
+        window.__setAllowExit?.(true);
         window.location.href = url;
     }
 </script>

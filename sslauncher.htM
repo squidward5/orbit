@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>IXL - Launcher</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Montserrat", sans-serif;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(#080808, #040404);
+        }
+
+        .main { 
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: white;
+            margin: 0 0 10px 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: rgb(150, 150, 150);
+            margin: 0 0 30px 0;
+            transition: all 0.15s ease;
+        }
+
+        select.ss-version {
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid #252525;
+            background: rgba(40,40,40,0.8);
+            color: white;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.2s ease;
+        }
+
+        select.ss-version option {
+            background-color: #181818;
+            color: white;
+        }
+
+        select.ss-version:focus {
+            outline: none;
+            border-color: #ff5e00;
+            background: rgba(60,60,60,0.9);
+        }
+
+        .confirm-btn {
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 16px;
+            border: 1px solid #252525;
+            background: rgba(40,40,40,0.8);
+            color: white;
+            width: 80%;
+            max-width: 300px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .confirm-btn:hover:enabled {
+            background: rgba(70,70,70,0.9);
+            transform: scale(1.05);
+        }
+
+        .confirm-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        @media (max-width: 600px) {
+            h2 { font-size: 28px; }
+            h3 { font-size: 16px; }
+            select.ss-version, .confirm-btn { width: 90%; font-size: 14px; } /* just for it to fit on small screens, especially the iframe */
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2>subway surfers launcher</h2>
+        <h3>choose a version of subway surfers and hit play.</h3>
+        <select id="version" class="ss-version">
+            <option value="" disabled selected hidden>select a version</option>
+            <option value="ss/barcelona.htM">Barcelona</option>
+            <option value="ss/beijing.htM">Beijing</option>
+            <option value="ss/berlin.htM">Berlin</option>
+            <option value="ss/buenoaires.htM">Bueno Aires</option>
+            <option value="ss/havana.htM">Havana</option>
+            <option value="ss/houston.htM">Houston</option>
+            <option value="ss/iceland.htM">Iceland</option>
+            <option value="ss/london.htM">London</option>
+            <option value="ss/mexico.htM">Mexico</option>
+            <option value="ss/miami.htM">Miami</option>
+            <option value="ss/monaco.htM">Monaco</option>
+            <option value="ss/neworleans.htM">New Orleans</option>
+            <option value="ss/sanfrancisco.htM">San Francisco</option>
+            <option value="ss/stpetersburg.htM">St. Petersburg</option>
+            <option value="ss/winterholiday.htM">Winter Holiday</option>
+            <option value="ss/zurich.htM">Zurich</option>
+        </select>
+        <button class="confirm-btn" id="confirm" disabled>play</button>
+    </div>
+
+    <script>
+        const select = document.getElementById("version");
+        const button = document.getElementById("confirm");
+
+        select.addEventListener("change", () => {
+            button.disabled = !select.value;
+        });
+
+        button.addEventListener("click", () => {
+            const url = select.value;
+            if (!url) return;
+
+            document.body.innerHTML = "";
+            document.body.style.margin = "0";
+            document.body.style.overflow = "hidden";
+
+            const iframe = document.createElement("iframe");
+            iframe.src = url;
+            iframe.style.position = "fixed";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100vw";
+            iframe.style.height = "100vh";
+            iframe.style.border = "none";
+            iframe.style.margin = "0";
+            iframe.style.padding = "0";
+            iframe.allowFullscreen = true;
+
+            document.body.appendChild(iframe);
+        });
+    </script>
+</body>
+</html>

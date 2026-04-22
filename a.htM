@@ -7,7 +7,7 @@
     <link rel="icon" href="icons/nav/logo.svg">
     <title>orbit</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/iframe.css">
+    <link rel="stylesheet" href="css/g.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,27 +20,30 @@
     <div class="navigation-bar">
         <ul class="nav-list">
             <li class="logo">
-                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('/')">
+                <img src="icons/nav/logo.svg" class="navlogo" onclick="navigateInternal('index.htM')">
             </li>
 
             <li class="tabs">
-                <img src="icons/nav/g.svg" onclick="navigateInternal('g.html')">
-                <img src="icons/nav/a.svg" onclick="navigateInternal('a.html')">
-                <img src="icons/nav/s.svg" onclick="navigateInternal('s.html')">
+                <img src="icons/nav/g.svg" onclick="navigateInternal('g.htM')">
+                <img src="icons/nav/a.svg" onclick="navigateInternal('a.htM')">
+                <img src="icons/nav/s.svg" onclick="navigateInternal('s.htM')">
             </li>
         </ul>
     </div>
 
     <div class="main">
-        <div class="iframe-container">
-            <iframe id="frame" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <img src="c-icons/fullscreen.svg" alt="fullscreen" id="f">
-            <img src="c-icons/refresh.svg" alt="reload" id="r">
-            <img src="c-icons/openinwindow.svg" alt="aboutblank" id="b">
-            <img src="c-icons/download.svg" alt="download" id="d">
-            <img src="c-icons/link.svg" alt="link" id="l">
+        <h1>apps</h1>
+        <div class="g-list">
+            <div class="g-container">
+                <img class="gbtn" src="a-icons/sb.png" alt="soundboard"
+                    onclick="navigateInternal('iframe.htM?url=/g/soundboard.htM');">
+                <div class="g-text">Soundboard</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="a-icons/chatgpt.png" alt="chatgpt"
+                    onclick="navigateInternal('iframe.htM?url=/g/chatgpt.htM');">
+                <div class="g-text">ChatGPT</div>
+            </div>
         </div>
     </div>
 
@@ -58,12 +61,11 @@
 
 <script src="js/particles.js"></script>
 <script src="js/infoupdater.js"></script>
-<script src="js/iframe.js"></script>
-<script src="js/search.js"></script>
 <script src="js/settings.js"></script>
 
 <script>
     function navigateInternal(url) {
+        window.__setAllowExit?.(true);
         window.location.href = url;
     }
 </script>
