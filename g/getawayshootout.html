@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ultimate Game Stash</title>
+
+<!-- FULL RESET TO REMOVE WHITE BORDERS & SCROLLBARS -->
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+#gameContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: rgb(88, 108, 128);
+}
+
+.webgl-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Hidden button (kept from original) */
+#button {
+    display: none;
+}
+
+/* Animation kept from original */
+.imgb_vis {
+    animation: imgb-animation 7s linear;
+}
+
+@keyframes imgb-animation {
+    10% { transform: translateX(0); }
+    20% { transform: translateX(100px); }
+    90% { transform: translateX(100px); }
+    100% { transform: translateX(0); }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Unity scripts -->
+<script src="https://cdn.jsdelivr.net/gh/lee2sman/everyday@d45d601d2c4d60adf809a0b677c00b7d12aba7e9/96/TemplateData/UnityProgress.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lordsofdank/GetawayShootout@9e99964c43638346680fce45d3b296408da61181/Build/UnityLoader.js"></script>
+
+<div class="webgl-content">
+    <div id="gameContainer"></div>
+</div>
+
+<script>
+var gameInstance = UnityLoader.instantiate(
+    "gameContainer",
+    "https://cdn.jsdelivr.net/gh/lordsofdank/GetawayShootout@9e99964c43638346680fce45d3b296408da61181/Build/GetawayShootoutTwoPlayerGamesOrg.json",
+    {
+        onProgress: UnityProgress,
+        Module: {
+            onRuntimeInitialized: function () {
+                UnityProgress(gameInstance, "complete");
+            }
+        }
+    }
+);
+</script>
+
+</body>
+</html>

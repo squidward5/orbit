@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/nav/logo.svg">
+    <title>orbit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iframe.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="navigation-bar">
+        <ul class="nav-list">
+            <li class="logo">
+                <img src="icons/branding/logo.svg" class="navlogo" onclick="window.location.href='index.html'">
+            </li>
+
+            <li class="tabs">
+                <img src="icons/nav/g.svg" onclick="window.location.href='work.html'">
+                <img src="icons/nav/a.svg" onclick="window.location.href='reading.html'">
+                <img src="icons/nav/s.svg" onclick="window.location.href='settings.html'">
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>settings</h1>
+
+        <div class="settings-grid">
+            <div class="card">
+                <h3>anti-close</h3>
+                <p>prevents this tab from being accidentally closed.</p>
+                <div class="btn-row">
+                    <button data-setting="antiClose" data-value="true">enable</button>
+                    <button data-setting="antiClose" data-value="false">disable</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>particles</h3>
+                <p>the little white dots that float on this page.</p>
+                <div class="btn-row">
+                    <button data-setting="particles" data-value="true">enable</button>
+                    <button data-setting="particles" data-value="false">disable</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>info display</h3>
+                <p>the display of information on the bottom of the page.</p>
+                <div class="btn-row">
+                    <button data-setting="infodisplay" data-value="true">enable</button>
+                    <button data-setting="infodisplay" data-value="false">disable</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>about:blank cloak</h3>
+                <p>click this button to make this tab an about:blank.</p>
+                <div class="btn-row">
+                    <button id="cloak">cloak</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>background</h3>
+                <p>switch between different backgrounds.</p>
+
+                <div class="btn-row">
+                    <select id="backgroundSelect">
+                        <option value="vanta" selected>Vanta</option>
+                        <option value="icons/backgrounds/Dark.png">Dark</option>
+                        <option value="icons/backgrounds/Waves.webp">Waves</option>
+                        <option value="icons/backgrounds/Beach.webp">Beach</option>
+                        <option value="icons/backgrounds/Mountains.webp">Mountains</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>tab hider</h3>
+                <p>when you navigate away from this tab, a black screen will appear.</p>
+                <div class="btn-row">
+                    <button data-setting="tabhider" data-value="true">enable</button>
+                    <button data-setting="tabhider" data-value="false">disable</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>messages</h3>
+                <p>the messages under the title on the home page.</p>
+                <div class="btn-row">
+                    <button data-setting="messages" data-value="true">enable</button>
+                    <button data-setting="messages" data-value="false">disable</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>custom cursor</h3>
+                <p>self-explanatory my man.</p>
+                <div class="btn-row">
+                    <button data-setting="cursor" data-value="true">enable</button>
+                    <button data-setting="cursor" data-value="false">disable</button>
+                </div>
+            </div>
+            <div class="card">
+                <h3>tab cloak</h3>
+                <p>disguise this tab to make it look like a different site.</p>
+                <div class="btn-row">
+                    <select id="cloakSelect">
+                        <option value="none" selected>None</option>
+                        <option value="google">Google</option>
+                        <option value="canvas">Canvas</option>
+                        <option value="drive">Google Drive</option>
+                        <option value="wayground">Wayground</option>
+                        <option value="aware">Aware</option>
+                        <option value="deltamath">DeltaMath</option>
+                        <option value="desmos">Desmos</option>
+                        <option value="legendsoflearning">Legends of Learning</option>
+                        <option value="hac">Home Access Center</option>
+                        <option value="gale">Gale Resources</option>
+                        <option value="britannica">Britannica</option>
+                        <option value="gizmos">Gizmos</option>
+                        <option value="quill">Quill</option>
+                        <option value="reflexmath">Reflex Math</option>
+                        <option value="typingclub">TypingClub</option>
+                        <option value="kahoot">Kahoot</option>
+                        <option value="blooket">Blooket</option>
+                        <option value="gimkit">Gimkit</option>
+                        <option value="nearpod">Nearpod</option>
+                        <option value="gguhoh">GoGuardian "Uh oh!"</option>
+                        <option value="ggrestricted">GoGuardian "Restricted"</option>
+                        <option value="contentkeeper">ContentKeeper</option>
+                        <option value="outlook">Outlook</option>
+                        <option value="canva">Canva</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card">
+                <h3>text overlay</h3>
+                <p>when hovering over games or apps, a text will show the name of the application.</p>
+                <div class="btn-row">
+                    <button data-setting="overlay" data-value="true">enable</button>
+                    <button data-setting="overlay" data-value="false">disable</button>
+                </div>
+            </div>
+            <div class="card">
+                <h3>anti-deledao</h3>
+                <p>tampers with the AI detection to use games/apps without being blocked. note: may not always work.</p>
+                <div class="slider-control">
+                    <input id="deledaoOpacity" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Noise strength">
+                    <span class="slider-knob" aria-hidden="true"></span>
+                    <span class="slider-tooltip" aria-hidden="true">60%</span>
+                </div>
+                <div class="btn-row">
+                    <button data-setting="deledao" data-value="true">enable</button>
+                    <button data-setting="deledao" data-value="false">disable</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vanta">
+        <canvas class="background-canvas"></canvas>
+    </div>
+</body>
+<script src="js/vantajs/three.min.js" defer></script>
+<script src="js/vantajs/vanta.fog.min.js" defer></script>
+<script src="js/vantajs/vanta.js" defer></script>
+<script src="js/particles.js" defer></script>
+<script src="js/settings.js" defer></script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/nav/logo.svg">
+    <title>orbit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iframe.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navigation-bar">
+        <ul class="nav-list">
+            <li class="logo">
+                <img src="icons/branding/logo.svg" class="navlogo" onclick="window.location.href='index.html'">
+            </li>
+
+            <li class="tabs">
+                <img src="icons/nav/g.svg" onclick="window.location.href='work.html'">
+                <img src="icons/nav/a.svg" onclick="window.location.href='reading.html'">
+                <img src="icons/nav/s.svg" onclick="window.location.href='settings.html'">
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div id="tooltip"></div>
+        <div class="iframe-container">
+            <img id="noiseoverlay" src="icons/images/noise.png">
+            <iframe id="frame" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <img src="icons/nav/fullscreen.svg" alt="fullscreen" id="f">
+            <img src="icons/nav/refresh.svg" alt="reload" id="r">
+            <img src="icons/nav/openinwindow.svg" alt="aboutblank" id="b">
+            <img src="icons/nav/download.svg" alt="download" id="d">
+            <img src="icons/nav/link.svg" alt="link" id="l">
+        </div>
+    </div>
+
+    <div class="vanta">
+        <canvas class="background-canvas"></canvas>
+    </div>
+</body>
+<script src="js/particles.js" defer></script>
+<script src="js/settings.js" defer></script>
+<script src="js/vantajs/three.min.js" defer></script>
+<script src="js/vantajs/vanta.fog.min.js" defer></script>
+<script src="js/vantajs/vanta.js" defer></script>
+<script src="js/iframe.js" defer></script>
+</html>

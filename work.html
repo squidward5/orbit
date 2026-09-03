@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/nav/logo.svg">
+    <title>orbit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/g.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <script src="js/vantajs/three.min.js" async></script>
+    <script src="js/vantajs/vanta.fog.min.js" async></script>
+    <script src="js/vantajs/vanta.js" async></script>
+</head>
+
+<body>
+    <div class="navigation-bar">
+        <ul class="nav-list">
+            <li class="logo">
+                <img src="icons/branding/logo.svg" class="navlogo" onclick="window.location.href='index.html'">
+            </li>
+
+            <li class="tabs">
+                <img src="icons/nav/g.svg" onclick="window.location.href='work.html'">
+                <img src="icons/nav/a.svg" onclick="window.location.href='reading.html'">
+                <img src="icons/nav/s.svg" onclick="window.location.href='settings.html'">
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>games</h1>
+        <p id="game-count">loading...</p>
+        <br>
+        <div class="search-container">
+            <img src="icons/nav/search.svg" alt="search" class="search-icon">
+            <input type="text" name="searchbar" id="searchbar" class="search-bar" placeholder="find what you're looking for...">
+        </div>
+        <br>
+        <div class="g-list">
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/20minutestilldawn.png" alt="20 minutes till dawn"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/20minutestilldawn/index.html'">
+                <div class="g-text">20 Minutes Till Dawn</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/p1.png" alt="portal"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/portal/index.html'">
+                <div class="g-text">Portal</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fb.png" alt="flappy bird"
+                    onclick="window.location.href='iframe.html?url=/g/flappybird.html'">
+                <div class="g-text">Flappy Bird</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ct.png" alt="clustertruck"
+                    onclick="window.location.href='iframe.html?url=/g/clustertruck.html'">
+                <div class="g-text">Clustertruck</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/sm64.png" alt="super mario 64"
+                    onclick="window.location.href='iframe.html?url=/g/supermario64.html'">
+                <div class="g-text">Super Mario 64</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/cc.png" alt="candy crush"
+                    onclick="window.location.href='iframe.html?url=/g/candycrush.html'">
+                <div class="g-text">Candy Crush</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/hl.png" alt="half life"
+                    onclick="window.location.href='iframe.html?url=/g/halflife.html'">
+                <div class="g-text">Half Life</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/aaf.png" alt="andy's apple farm"
+                    onclick="window.location.href='iframe.html?url=/g/andysapplefarm.html'">
+                <div class="g-text">Andy's Apple Farm</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/goi.png" alt="getting over it with bennett foddy"
+                    onclick="window.location.href='iframe.html?url=/g/gettingoverit.html'">
+                <div class="g-text">Getting Over It with Bennett Foddy</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/mt.png" alt="monster tracks"
+                    onclick="window.location.href='iframe.html?url=/g/monstertracks.html'">
+                <div class="g-text">Monster Tracks</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ugg.png" alt="untitled goose game"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/untitled-goose-game/index.html'">
+                <div class="g-text">Untitled Goose Game</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/crossyroad.jpeg" alt="crossy road"
+                    onclick="window.location.href='iframe.html?url=/g/crossyroad.html';">
+                <div class="g-text">Crossy Road</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ss.png" alt="subway surfers"
+                    onclick="window.location.href='iframe.html?url=/sslauncher.html';">
+                <div class="g-text">Subway Surfers</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnaf.png" alt="five nights at freddys"
+                    onclick="window.location.href='iframe.html?url=/g/fnaf1.html'">
+                <div class="g-text">Five Nights at Freddy's</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/drivemad.png" alt="drive mad"
+                    onclick="window.location.href='iframe.html?url=/g/drivemad.html'">
+                <div class="g-text">Drive Mad</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/totm.png" alt="tomb of the mask"
+                    onclick="window.location.href='iframe.html?url=/g/tombofthemask.html'">
+                <div class="g-text">Tomb of the Mask</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/snowrider3d.png" alt="snow rider 3d"
+                    onclick="window.location.href='iframe.html?url=/g/snowrider3d.html'">
+                <div class="g-text">Snow Rider 3D</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/cookieclicker.png" alt="cookie clicker"
+                    onclick="window.location.href='iframe.html?url=/g/cookieclicker.html'">
+                <div class="g-text">Cookie Clicker</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bs.png" alt="buckshot roulette"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/buckshot-roulette/index.html'">
+                <div class="g-text">Buckshot Roulette</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/tboi.png" alt="the binding of isaac"
+                    onclick="window.location.href='iframe.html?url=/g/bindingofisaac.html'">
+                <div class="g-text">The Binding of Isaac</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/basketbros.png" alt="basket bros"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/basketbros/index.html'">
+                <div class="g-text">Basket Bros</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/db.webp" alt="drift boss"
+                    onclick="window.location.href='iframe.html?url=/g/driftboss.html'">
+                <div class="g-text">Drift Boss</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/dh.png" alt="drift hunters"
+                    onclick="window.location.href='iframe.html?url=/g/drifthunters.html'">
+                <div class="g-text">Drift Hunters</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bitlife.png" alt="bitlife"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/bitlife/index.html'">
+                <div class="g-text">BitLife</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnaf2.png" alt="five nights at freddys 2"
+                    onclick="window.location.href='iframe.html?url=/g/fnaf2.html'">
+                <div class="g-text">Five Nights at Freddy's 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnaf3.png" alt="five nights at freddys 3"
+                    onclick="window.location.href='iframe.html?url=/g/fnaf3.html'">
+                <div class="g-text">Five Nights at Freddy's 3</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnaf4.png" alt="five nights at freddys 4"
+                    onclick="window.location.href='iframe.html?url=/g/fnaf4.html'">
+                <div class="g-text">Five Nights at Freddy's 4</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnafsisterlocation.jpg" alt="five nights at freddys sister location"
+                    onclick="window.location.href='iframe.html?url=/g/fnafsl.html'">
+                <div class="g-text">Five Nights at Freddy's Sister Location</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnafworld.png" alt="fnaf world"
+                    onclick="window.location.href='iframe.html?url=/g/fnafworld.html'">
+                <div class="g-text">FNAF World</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ucn.png" alt="five nights at freddys ultimate custom night"
+                    onclick="window.location.href='iframe.html?url=/g/fnafucn.html'">
+                <div class="g-text">Five Nights at Freddy's Ultimate Custom Night</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bloxorz.png" alt="bloxorz"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/bloxorz/index.html'">
+                <div class="g-text">Bloxorz</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/br.png" alt="basket random"
+                    onclick="window.location.href='iframe.html?url=/g/basketrandom.html'">
+                <div class="g-text">Basket Random</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bb.png" alt="block blast"
+                    onclick="window.location.href='iframe.html?url=/g/blockblast.html'">
+                <div class="g-text">Block Blast</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/cb.png" alt="core ball"
+                    onclick="window.location.href='iframe.html?url=/g/coreball.html'">
+                <div class="g-text">Coreball</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/hw.png" alt="happy wheels"
+                    onclick="window.location.href='iframe.html?url=/g/happywheels.html'">
+                <div class="g-text">Happy Wheels</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/r.png" alt="r.e.p.o."
+                    onclick="window.location.href='iframe.html?url=/g/repo.html'">
+                <div class="g-text">R.E.P.O.</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/er.png" alt="escape road"
+                    onclick="window.location.href='iframe.html?url=/g/escaperoad.html'">
+                <div class="g-text">Escape Road</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/er2.png" alt="escape road 2"
+                    onclick="window.location.href='iframe.html?url=/g/escaperoad2.html'">
+                <div class="g-text">Escape Road 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/jt.png" alt="johnny trigger"
+                    onclick="window.location.href='iframe.html?url=/g/johnnytrigger.html'">
+                <div class="g-text">Johnny Trigger</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/mx3m.png" alt="moto x3m"
+                    onclick="window.location.href='iframe.html?url=/g/motox3m.html'">
+                <div class="g-text">Moto X3M</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/mx3m2.png" alt="moto x3m 2"
+                    onclick="window.location.href='iframe.html?url=/g/motox3m2.html'">
+                <div class="g-text">Moto X3M 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/mx3m3.png" alt="moto x3m 3"
+                    onclick="window.location.href='iframe.html?url=/g/motox3m3.html'">
+                <div class="g-text">Moto X3M 3</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/mx3mwinter.png" alt="moto x3m winter"
+                    onclick="window.location.href='iframe.html?url=/g/motox3mwinter.html'">
+                <div class="g-text">Moto X3M Winter</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/mx3mspooky.png" alt="moto x3m spooky land"
+                    onclick="window.location.href='iframe.html?url=/g/motox3mspookyland.html'">
+                <div class="g-text">Moto X3M Spooky Land</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/mx3mpoolparty.png" alt="moto x3m pool party"
+                    onclick="window.location.href='iframe.html?url=/g/motox3mpoolparty.html'">
+                <div class="g-text">Moto X3M Pool Party</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/hn.png" alt="hollow night"
+                    onclick="window.location.href='iframe.html?url=/g/hollownight.html'">
+                <div class="g-text">Hollow Night</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bp.png" alt="bad parenting"
+                    onclick="window.location.href='iframe.html?url=/g/badparenting.html'">
+                <div class="g-text">Bad Parenting</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ata.png" alt="amanda the adventurer"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/amanda-the-adventurer/index.html'">
+                <div class="g-text">Amanda the Adventurer</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/jd.png" alt="jelly drift"
+                    onclick="window.location.href='iframe.html?url=/g/jellydrift.html'">
+                <div class="g-text">Jelly Drift</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/kson.png" alt="karlson"
+                    onclick="window.location.href='iframe.html?url=/g/karlson.html'">
+                <div class="g-text">Karlson</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/uk.png" alt="ultrakill"
+                    onclick="window.location.href='iframe.html?url=/g/ultrakill.html'">
+                <div class="g-text">ULTRAKILL</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/batim.png" alt="bendy and the ink machine"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/batim/index.html'">
+                <div class="g-text">Bendy and the Ink Machine</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/boaw.png" alt="the binding of isaac wrath of the lamb"
+                    onclick="window.location.href='iframe.html?url=/g/bindingofisaacwrathofthelamb.html'">
+                <div class="g-text">The Binding of Isaac: Wrath of the Lamb</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/co09.png" alt="class of '09"
+                    onclick="window.location.href='iframe.html?url=/g/classof09.html'">
+                <div class="g-text">Class of '09</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/granny.png" alt="granny"
+                    onclick="window.location.href='iframe.html?url=/g/granny.html'">
+                <div class="g-text">Granny</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/granny2.png" alt="granny 2"
+                    onclick="window.location.href='iframe.html?url=/g/granny2.html'">
+                <div class="g-text">Granny 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/granny3.png" alt="granny 3"
+                    onclick="window.location.href='iframe.html?url=/g/granny3.html'">
+                <div class="g-text">Granny 3</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/pf.png" alt="parking fury"
+                    onclick="window.location.href='iframe.html?url=/g/parkingfury.html'">
+                <div class="g-text">Parking Fury</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/pf2.png" alt="parking fury 2"
+                    onclick="window.location.href='iframe.html?url=/g/parkingfury2.html'">
+                <div class="g-text">Parking Fury 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/pf3.png" alt="parking fury 3"
+                    onclick="window.location.href='iframe.html?url=/g/parkingfury3.html'">
+                <div class="g-text">Parking Fury 3</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/1v1lol.png" alt="1v1.LOL"
+                    onclick="window.location.href='iframe.html?url=/g/1v1lol.html'">
+                <div class="g-text">1v1.LOL</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/gs.png" alt="getaway shootout"
+                    onclick="window.location.href='iframe.html?url=/g/getawayshootout.html';">
+                <div class="g-text">Getaway Shootout</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/rs.png" alt="rooftop snipers"
+                    onclick="window.location.href='iframe.html?url=/g/rooftopsnipers.html';">
+                <div class="g-text">Rooftop Snipers</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/cc3d.png" alt="crazy cattle 3d"
+                    onclick="window.location.href='iframe.html?url=/g/crazycattle3d.html';">
+                <div class="g-text">Crazy Cattle 3D</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ppd.png" alt="people playground"
+                    onclick="window.location.href='iframe.html?url=/g/peopleplayground.html';">
+                <div class="g-text">People Playground</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/au.png" alt="achievement unlocked"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/achievementunlocked/index.html';">
+                <div class="g-text">Achievement Unlocked</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/au.png" alt="achievement unlocked 2"
+                    onclick="window.location.href='iframe.html?url=/g/achievementunlocked2.html';">
+                <div class="g-text">Achievement Unlocked 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/au.png" alt="achievement unlocked 3"
+                    onclick="window.location.href='iframe.html?url=/g/achievementunlocked3.html';">
+                <div class="g-text">Achievement Unlocked 3</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/baldisbasics.png" alt="baldis basics"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/baldis-basics/index.html';">
+                <div class="g-text">Baldi's Basics</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/adofai.png" alt="a dance of fire and ice"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/adofai/index.html';">
+                <div class="g-text">A Dance of Fire and Ice</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnf.jpeg" alt="friday night funkin'"
+                    onclick="window.location.href='iframe.html?url=/fnflauncher.html';">
+                <div class="g-text">Friday Night Funkin'</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/mc.png" alt="minecraft"
+                    onclick="window.location.href='iframe.html?url=/mclauncher.html';">
+                <div class="g-text">Minecraft</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fg.png" alt="flying gorilla"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/flying-gorilla/index.html';">
+                <div class="g-text">Flying Gorilla</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/gtag.png" alt="gorilla tag"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/gtag/index.html';">
+                <div class="g-text">Gorilla Tag</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/10mtd.png" alt="10 minutes till dawn"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/10minutestilldawn/index.html';">
+                <div class="g-text">10 Minutes Till Dawn</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/wbwwb.png" alt="we become what we behold"
+                    onclick="window.location.href='iframe.html?url=/g/webecomewhatwebehold.html';">
+                <div class="g-text">We Become What We Behold</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bbs.png" alt="basketball stars"
+                    onclick="window.location.href='iframe.html?url=/g/basketballstars.html';">
+                <div class="g-text">Basketball Stars</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/raft.png" alt="raft"
+                    onclick="window.location.href='iframe.html?url=/g/raft.html';">
+                <div class="g-text">Raft</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnaw.png" alt="five nights at winstons"
+                    onclick="window.location.href='iframe.html?url=/g/fivenightsatwinstons.html';">
+                <div class="g-text">Five Nights at Winston's</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/t.png" alt="terraria"
+                    onclick="window.location.href='iframe.html?url=/g/terraria.html';">
+                <div class="g-text">Terraria</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/o.png" alt="osu!"
+                    onclick="window.location.href='iframe.html?url=/g/osu.html';">
+                <div class="g-text">osu!</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/sr.png" alt="slow roads"
+                    onclick="window.location.href='iframe.html?url=/g/slowroads.html';">
+                <div class="g-text">Slow Roads</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/sh.png" alt="stickman hook"
+                    onclick="window.location.href='iframe.html?url=/g/stickmanhook.html';">
+                <div class="g-text">Stickman Hook</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ts1.png" alt="time shooter 1"
+                    onclick="window.location.href='iframe.html?url=/g/timeshooter1.html';">
+                <div class="g-text">Time Shooter 1</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ts2.png" alt="time shooter 2"
+                    onclick="window.location.href='iframe.html?url=/g/timeshooter2.html';">
+                <div class="g-text">Time Shooter 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ts3.png" alt="time shooter 3: swat"
+                    onclick="window.location.href='iframe.html?url=/g/timeshooter3swat.html';">
+                <div class="g-text">Time Shooter 3: SWAT</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/adgac.png" alt="a difficult game about climbing"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/adgac/index.html';">
+                <div class="g-text">A Difficult Game About Climbing</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/celeste.png" alt="celeste"
+                    onclick="window.location.href='iframe.html?url=/g/celeste.html';">
+                <div class="g-text">Celeste</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/k1.png" alt="kindergarten"
+                    onclick="window.location.href='iframe.html?url=/g/kindergarten.html';">
+                <div class="g-text">Kindergarten</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/k2.png" alt="kindergarten 2"
+                    onclick="window.location.href='iframe.html?url=/g/kindergarten2.html';">
+                <div class="g-text">Kindergarten 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/k3.png" alt="kindergarten 3"
+                    onclick="window.location.href='iframe.html?url=/g/kindergarten3.html';">
+                <div class="g-text">Kindergarten 3</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/p2.png" alt="paper.io 2"
+                    onclick="window.location.href='iframe.html?url=/g/p2.html';">
+                <div class="g-text">Paper.io 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/polytrack.jpg" alt="polytrack"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/polytrack/index.html';">
+                <div class="g-text">Polytrack</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bartblast.webp" alt="bart blast"
+                    onclick="window.location.href='iframe.html?url=/g/bartblast.html';">
+                <div class="g-text">Bart Blast</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bartbash.png" alt="bart bash"
+                    onclick="window.location.href='iframe.html?url=/g/bartbash.html';">
+                <div class="g-text">Bart Bash</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bbb.png" alt="baseball bros"
+                    onclick="window.location.href='iframe.html?url=/g/baseballbros.html';">
+                <div class="g-text">Baseball Bros</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/hollowknightsilksong.png" alt="hollow knight: silksong"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/hollow-night-silksong/index.html';">
+                <div class="g-text">Hollow Knight: Silksong</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnae.png" alt="five nights at epstein's"
+                    onclick="window.location.href='iframe.html?url=/g/fnae.html';">
+                <div class="g-text">Five Nights at Epstein's</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnac.png" alt="five nights at candy's"
+                    onclick="window.location.href='iframe.html?url=/g/fnac.html';">
+                <div class="g-text">Five Nights at Candy's</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/fnac2.png" alt="five nights at candy's 2"
+                    onclick="window.location.href='iframe.html?url=/g/fnac2.html';">
+                <div class="g-text">Five Nights at Candy's 2</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/smd.png" alt="stickman duel"
+                    onclick="window.location.href='iframe.html?url=/g/stickmanduel.html';">
+                <div class="g-text">Stickman Duel</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/amaze.png" alt="amaze"
+                    onclick="window.location.href='iframe.html?url=/g/amaze.html';">
+                <div class="g-text">Amaze</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bm.png" alt="bloodmoney!"
+                    onclick="window.location.href='iframe.html?url=/g/bm.html';">
+                <div class="g-text">BLOODMONEY!</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/s.png" alt="slope"
+                    onclick="window.location.href='iframe.html?url=/g/slope.html';">
+                <div class="g-text">Slope</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/sbr.png" alt="schoolboy runaway"
+                    onclick="window.location.href='iframe.html?url=/g/schoolboyrunaway.html';">
+                <div class="g-text">Schoolboy Runaway</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bs3d.png" alt="brawl simulator 3d"
+                    onclick="window.location.href='iframe.html?url=/g/brawlsimulator3d.html';">
+                <div class="g-text">Brawl Simulator 3D</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/wf.png" alt="webfishing"
+                    onclick="window.location.href='iframe.html?url=/g/webfishing.html';">
+                <div class="g-text">Webfishing</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/omori.png" alt="omori"
+                    onclick="window.location.href='iframe.html?url=/g/omori.html';">
+                <div class="g-text">OMORI</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/ch.png" alt="cuphead"
+                    onclick="window.location.href='iframe.html?url=/selfhosted/cuphead/index.html';">
+                <div class="g-text">Cuphead</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/rerun.png" alt="rerun"
+                    onclick="window.location.href='iframe.html?url=/g/rerun.html';">
+                <div class="g-text">RE:RUN</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/tmftw.png" alt="the man from the window"
+                    onclick="window.location.href='iframe.html?url=/g/tmftw.html';">
+                <div class="g-text">The Man from The Window</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/uty.png" alt="undertale yellow"
+                    onclick="window.location.href='iframe.html?url=/g/uty.html';">
+                <div class="g-text">Undertale Yellow</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/gd.png" alt="geometry dash"
+                    onclick="window.location.href='iframe.html?url=/g/gd.html';">
+                <div class="g-text">Geometry Dash</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/aswc.png" alt="a small world cup"
+                    onclick="window.location.href='iframe.html?url=/g/asmallworldcup.html';">
+                <div class="g-text">A Small World Cup</div>
+            </div>
+            <div class="g-container">
+                <img class="gbtn" src="icons/g/bj3d.png" alt="bottle jump 3d"
+                    onclick="window.location.href='iframe.html?url=/g/bottlejump3d.html';">
+                <div class="g-text">Bottle Jump 3D</div>
+            </div>
+        </div>
+        <br>
+        <p>you've reached the end!</p>
+    </div>
+    <div class="vanta">
+        <canvas class="background-canvas"></canvas>
+    </div>
+</body>
+<script src="js/particles.js" defer></script>
+<script src="js/settings.js" defer></script>
+<script src="js/vantajs/three.min.js" defer></script>
+<script src="js/vantajs/vanta.fog.min.js" defer></script>
+<script src="js/vantajs/vanta.js" defer></script>
+<script>
+    const searchbar = document.getElementById('searchbar');
+
+    searchbar.addEventListener('input', function () {
+        const query = this.value.toLowerCase();
+        const games = document.querySelectorAll('.g-container');
+
+        games.forEach(game => {
+            const title = game.querySelector('.g-text').textContent.toLowerCase();
+
+            if (title.includes(query)) {
+                game.style.display = '';
+            } else {
+                game.style.display = 'none';
+            }
+        });
+    });
+
+    const gameCount = document.querySelectorAll('.g-container').length;
+    document.getElementById('game-count').textContent =
+        `loaded ${gameCount} games!`;
+
+    const list = document.querySelector(".g-list");
+    const games = Array.from(list.children);
+
+    games.sort((a, b) => {
+        const nameA = a.querySelector(".g-text").textContent.toLowerCase();
+        const nameB = b.querySelector(".g-text").textContent.toLowerCase();
+        return nameA.localeCompare(nameB);
+    });
+
+    games.forEach(game => list.appendChild(game));
+</script>
+
+</html>

@@ -1,0 +1,106 @@
+
+html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.gbtn {
+    border-radius: 12px;
+    z-index: 2;
+    cursor: pointer;
+    display: block;
+    transition: all 0.2s ease;
+    height: auto;
+    transform-origin: center center;
+    will-change: transform;
+    width: 225px;
+    background-color: black;
+    height: 225px;
+    object-fit: cover;
+}
+
+.g-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.g-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 225px;
+    height: 225px;
+    border: 2px solid transparent; 
+    box-sizing: border-box;
+}
+
+.g-container:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ffffff;
+    z-index: 10; 
+}
+
+.g-container img.gbtn {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.g-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 12px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.g-container:hover .g-text {
+    opacity: 1;
+}
+
+.hide-overlay .g-container:hover .g-text {
+    opacity: 0;
+}
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    z-index: 1;
+}
+
+.g-container:hover .g-text {
+    transform: translateY(0);
+    opacity: 1;
+}

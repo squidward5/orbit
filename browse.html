@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/branding/logo.svg">
+    <title>orbit</title>
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="controls" id="controls">
+        <div class="topbar">
+            <div class="hide" id="toggleControls"></div>
+        </div>
+
+        <div class="controls-inner">
+            <a>
+                <img src="icons/branding/logo.svg" id="home">
+            </a>
+
+            <input type="text" id="search" class="search" placeholder="search for something...">
+
+            <a id="back"><img src="icons/nav/previous.png"></a>
+            <a id="forward"><img src="icons/nav/next.png"></a>
+            <a id="refresh"><img src="icons/nav/refresh.svg"></a>
+            <a id="fullscreen"><img src="icons/nav/fullscreen.svg"></a>
+        </div>
+    </div>
+    <iframe id="searchframe"></iframe>
+    
+    <div class="vanta">
+        <canvas class="background-canvas"></canvas>
+    </div>
+</body>
+
+<script src="js/iframe.js"></script>
+<script src="js/search.js"></script>
+<script src="js/settings.js" defer></script>
+<script src="js/vantajs/three.min.js" defer></script>
+<script src="js/vantajs/vanta.fog.min.js" defer></script>
+<script src="js/vantajs/vanta.js" defer></script>
+<script>
+
+    const controls = document.getElementById("controls");
+    const toggle = document.getElementById("toggleControls");
+
+    let hidden = false;
+
+    toggle.addEventListener("click", () => {
+        hidden = !hidden;
+        controls.classList.toggle("hidden", hidden);
+    });
+</script>
+
+</html>
